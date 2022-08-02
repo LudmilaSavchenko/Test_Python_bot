@@ -39,4 +39,14 @@ def answer(call):
   else:
     bot.send_message(call.message.chat.id, "Ну 3 можно было и не выбирать, конечно.")
 
+@bot.message_handler(content_types=['text'])
+def all_messages(message):
+    bot.send_message(message.chat.id,  "проверка. id:" + str(message.message_id))
+    #my_chat_id = int(message.chat.id)
+    #bot.send_message(message.chat.id, my_chat_id)
+    bot.forward_message(int(message.chat.id), -1001790436083, message.message_id)
+
+
+
 bot.infinity_polling()
+
