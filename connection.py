@@ -1,4 +1,5 @@
 import telebot
+import random
 
 token = '5395629028:AAEY9svrCRXqzYcSk2-yvSVUeaA7jnWsrRg'
 bot = telebot.TeleBot(token)
@@ -39,14 +40,13 @@ def answer(call):
   else:
     bot.send_message(call.message.chat.id, "Ну 3 можно было и не выбирать, конечно.")
 
-@bot.message_handler(content_types=['text'])
+#@bot.message_handler(content_types=['text'])
+@bot.message_handler(commands=['mem'])
 def all_messages(message):
-    bot.send_message(message.chat.id,  "проверка. id:" + str(message.message_id))
+    #bot.send_message(message.chat.id,  "проверка. id:" + str(message.message_id))
     #my_chat_id = int(message.chat.id)
     #bot.send_message(message.chat.id, my_chat_id)
-    bot.forward_message(int(message.chat.id), -1001790436083, message.message_id)
-
-
+    bot.forward_message(int(message.chat.id), -1001790436083, random.randint(1,message.message_id))
 
 bot.infinity_polling()
 
