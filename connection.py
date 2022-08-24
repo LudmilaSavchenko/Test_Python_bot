@@ -19,8 +19,8 @@ def button_message(message):
   url_button3 = telebot.types.InlineKeyboardButton("3", callback_data='3')
   keyboard.add(url_button1, url_button2, url_button3)
   bot.send_message(message.chat.id, "Сделай выбор:", reply_markup=keyboard)
-"""
-  """
+
+
   markup = telebot.types.ReplyKeyboardMarkup(row_width=2) # resize_keyboard=True
   item1 = telebot.types.KeyboardButton("МЯУ")
   item2 = telebot.types.KeyboardButton("ГАФ")
@@ -41,7 +41,6 @@ def answer(call):
   else:
     bot.send_message(call.message.chat.id, "Ну 3 можно было и не выбирать, конечно.")
 
-#@bot.message_handler(content_types=['text'])
 @bot.message_handler(commands=['mem'])
 def all_messages(message):
     #bot.send_message(message.chat.id,  "проверка. id:" + str(message.message_id))
