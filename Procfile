@@ -1,1 +1,1 @@
-web: python connection.py
+bot: python connection.py
